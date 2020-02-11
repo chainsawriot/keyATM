@@ -439,6 +439,9 @@ keyATM_fit <- function(docs, model, no_keyword_topics,
   if (options$store_theta)
     stored_values$Z_tables <- list()
 
+  # Placeholder for vocab_weights
+  stored_values$vocab_weights <- c(-1)
+
   key_model <- list(
                     W = W, Z = Z, S = S,
                     model = abb_model_name(model),

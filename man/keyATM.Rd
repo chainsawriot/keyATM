@@ -6,7 +6,7 @@
 \usage{
 keyATM(docs, model, no_keyword_topics, keywords = list(),
   model_settings = list(), priors = list(), options = list(),
-  keep = c())
+  keep = c(), return_fitted = F)
 }
 \arguments{
 \item{docs}{texts read via \code{keyATM_read()}}

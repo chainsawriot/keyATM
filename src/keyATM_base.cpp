@@ -172,10 +172,10 @@ double keyATMbase::loglik_total()
       }
       loglik += mylgamma( beta_s * (double)keywords_num[k] ) - mylgamma(beta_s * (double)keywords_num[k] + n_s1_k(k) );
 
+      // s
       // Normalization
       loglik += mylgamma( prior_gamma(k, 0) + prior_gamma(k, 1)) - mylgamma( prior_gamma(k, 0)) - mylgamma( prior_gamma(k, 1));
 
-      // s
       loglik += mylgamma( n_s0_k(k) + prior_gamma(k, 1) ) 
                 - mylgamma(n_s1_k(k) + prior_gamma(k, 0) + n_s0_k(k) + prior_gamma(k, 1))
                 + mylgamma(n_s1_k(k) + prior_gamma(k, 0));  

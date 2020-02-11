@@ -79,7 +79,8 @@
 #' @export
 keyATM <- function(docs, model, no_keyword_topics,
                    keywords = list(), model_settings = list(),
-                   priors = list(), options = list(), keep = c())
+                   priors = list(), options = list(), keep = c(),
+                   return_fitted = F)
 {
   # Check type
   if (length(keep) != 0)
@@ -92,6 +93,9 @@ keyATM <- function(docs, model, no_keyword_topics,
                        docs, model, no_keyword_topics,
                        keywords, model_settings, priors, options
                       )
+
+  if (return_fitted)
+    return(fitted)
 
   # Get output
   out <- keyATM_output(fitted)

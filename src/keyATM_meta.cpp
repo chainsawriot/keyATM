@@ -495,6 +495,13 @@ double keyATMmeta::gammaln_frac(const double &value, const int &count)
 List keyATMmeta::return_model()
 {
   // Return output to R
+
+  NumericVector vocab_weights_R(num_vocab);
+
+  for (int v = 0; v < num_vocab; v++) {
+    vocab_weights_R[v] = vocab_weights(v); 
+  }
+  stored_values["vocab_weights"] = vocab_weights_R;
   model["stored_values"] = stored_values;
   return model;
 }
